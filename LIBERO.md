@@ -118,13 +118,6 @@ uv run --extra cu128 --group libero --python 3.10 \
     --data_collection False
 ```
 
-To use the local download instead, pass the files directly:
-```bash
-    --ckpt_path checkpoints/MetaWAM-LIBERO-Predict2-2B/MetaWAM-LIBERO-Predict2-2B.pt \
-    --dataset_stats_path checkpoints/MetaWAM-LIBERO-Predict2-2B/libero_dataset_statistics.json \
-    --t5_text_embeddings_path checkpoints/MetaWAM-LIBERO-Predict2-2B/libero_t5_embeddings.pkl \
-```
-
 Notes:
 * `--task_suite_name` is one of `libero_spatial`, `libero_object`, `libero_goal`, `libero_10`. Each run evaluates 500 trials (10 tasks x 50 episodes); change the number of trials per task with `--num_trials_per_task`.
 * `--ckpt_path` accepts either a Hugging Face repo id (`<org>/<repo>`, the `.pt` file inside is downloaded) or a local `.pt` file. A relative path with exactly two components (e.g. `checkpoints/MetaWAM-LIBERO-Predict2-2B`) is interpreted as a repo id, so point it at the `.pt` file. `--dataset_stats_path` and `--t5_text_embeddings_path` accept a local file or `<org>/<repo>/<file>`. Set `HF_HOME` to change where downloads are cached.
@@ -179,7 +172,7 @@ Notes:
     python -m cosmos_policy.experiments.robot.libero.summarize_libero_plus \
       --log_dir logs/libero_plus --libero_plus_root $LIBERO_PLUS_ROOT --run_tag metawam_liberoplus--seed195
   ```
-* `LIBERO_PLUS_PROMPT_MODE` selects which instruction the model is conditioned on. `clean_nonlanguage` (default, used for the paper) keeps the rewritten instruction for the language perturbations and restores the original LIBERO instruction for the other six categories, so that only the language category perturbs the text condition. `raw` uses the LIBERO-Plus instruction as is for every task. `clean_nonlanguage` reads the original instructions from a local `libero_t5_embeddings.pkl` (`LIBERO_PLUS_CANONICAL_PROMPTS_PATH`, default `$CKPT_DIR/libero_t5_embeddings.pkl`).
+* `LIBERO_PLUS_PROMPT_MODE` selects which instruction the model is conditioned on. `clean_nonlanguage` (default) keeps the rewritten instruction for the language perturbations and restores the original LIBERO instruction for the other six categories, so that only the language category perturbs the text condition. `raw` uses the LIBERO-Plus instruction as is for every task. `clean_nonlanguage` reads the original instructions from a local `libero_t5_embeddings.pkl` (`LIBERO_PLUS_CANONICAL_PROMPTS_PATH`, default `$CKPT_DIR/libero_t5_embeddings.pkl`).
 * If you run shards by hand, include `--sh<i>of<N>--` in `--run_id_note` (e.g. `--run_id_note metawam_liberoplus--seed195--sh0of8--deterministic`) so that `summarize_libero_plus.py` can merge the logs.
 * Every process loads the model and its suite's T5 cache onto the GPU, so choose `NUM_SHARDS` per GPU according to GPU memory.
 
@@ -210,7 +203,7 @@ Checkpoints are saved every 600 iterations as sharded (DCP) checkpoints under `$
 
 To evaluate a checkpoint, first convert it into a single `.pt` file, then pass that file to the evaluation script:
 ```bash
-bash scripts/convert_checkpoint.sh metawam_libero__inference \
+UV_GROUP=libero bash scripts/convert_checkpoint.sh metawam_libero__inference \
   output/cosmos_policy/metawam/metawam_libero/checkpoints/iter_000010200/model \
   checkpoints/metawam_libero_10200.pt
 

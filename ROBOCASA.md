@@ -131,13 +131,6 @@ uv run --extra cu128 --group robocasa --python 3.10 \
     --inference_batch_timeout 0.05
 ```
 
-To use the local download instead, pass the files directly:
-```bash
-    --ckpt_path checkpoints/MetaWAM-RoboCasa-Predict2-2B/MetaWAM-RoboCasa-Predict2-2B.pt \
-    --dataset_stats_path checkpoints/MetaWAM-RoboCasa-Predict2-2B/robocasa_dataset_statistics.json \
-    --t5_text_embeddings_path checkpoints/MetaWAM-RoboCasa-Predict2-2B/robocasa_t5_embeddings.pkl \
-```
-
 Notes:
 * `--ckpt_path` accepts either a Hugging Face repo id (`<org>/<repo>`, the `.pt` file inside is downloaded) or a local `.pt` file. A relative path with exactly two components (e.g. `checkpoints/MetaWAM-RoboCasa-Predict2-2B`) is interpreted as a repo id, so point it at the `.pt` file. `--dataset_stats_path` and `--t5_text_embeddings_path` accept a local file or `<org>/<repo>/<file>`. Set `HF_HOME` to change where downloads are cached.
 * The `--seed` and `--deterministic` arguments matter if you want to reproduce our results: we used seeds {195, 196, 197} with `--deterministic True` and report the average over the three seeds (see the [README](README.md) for the numbers). Results may vary slightly with a different PyTorch version or different hardware.

@@ -41,8 +41,8 @@ LOG_DIR="${LOG_DIR:-logs/libero_plus}"
 RUN_TAG="${RUN_TAG:-metawam_liberoplus--seed${SEED}}"
 RESUME_DIR="${RESUME_DIR:-}"
 
-# Language-conditioning protocol used for the paper: clean_nonlanguage (only the language perturbations change the
-# instruction; the other categories keep the original LIBERO instruction). `raw` feeds task.language as is.
+# Language-conditioning protocol: clean_nonlanguage (only the language perturbations change the instruction; the
+# other categories keep the original LIBERO instruction) or raw (task.language as is for every task).
 export LIBERO_PLUS_PROMPT_MODE="${LIBERO_PLUS_PROMPT_MODE:-clean_nonlanguage}"
 if [[ "${LIBERO_PLUS_PROMPT_MODE}" != "raw" ]]; then
   # Must be a local copy of the original LIBERO T5 cache (its 40 keys are the original instructions)

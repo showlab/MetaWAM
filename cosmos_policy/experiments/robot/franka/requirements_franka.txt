@@ -1,0 +1,17 @@
+# Extra dependencies for the Franka real-robot deployment (cosmos_policy/experiments/robot/franka).
+# The main environment (pyproject.toml) already provides numpy, torch/torchvision, opencv-python, Pillow,
+# scipy, pyarrow, tyro and tqdm.
+
+# --- Policy-server side (GPU machine): deploy_franka.py ---
+draccus
+fastapi
+json_numpy
+uvicorn
+
+# --- Robot-PC side: run_franka_eval.py, collect_rollouts.py, camera_utils.py, franka_interface.py ---
+pyrealsense2     # RealSense cameras (camera_utils.py)
+zerorpc          # ZeroRPC client for the Polymetis server on the Franka NUC (franka_interface.py)
+requests         # HTTP client for the policy server
+moviepy>=2.0     # Optional: rollout video saving (--save-video); uses the moviepy 2.x import path
+# If the robot PC does not use the main environment, also install:
+# numpy torch torchvision tqdm Pillow opencv-python scipy pyarrow tyro

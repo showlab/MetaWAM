@@ -1,0 +1,15 @@
+/.cuda-name
+/build
+/.venv
+__pycache__/
+*.pyc
+
+# Training outputs, evaluation logs and rollouts
+/output
+/logs
+/rollouts
+*.mp4
+MUJOCO_LOG.TXT
+
+# Released weights are hosted on Hugging Face, not in git
+/checkpoints

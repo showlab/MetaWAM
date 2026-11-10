@@ -8,7 +8,16 @@
 
 **Accepted at CoRL 2026 🎉**
 
-[**Code**](https://github.com/showlab/MetaWAM) | [**RoboCasa checkpoint**](https://huggingface.co/Ethanliang99/MetaWAM-RoboCasa-Predict2-2B) | [**LIBERO checkpoint**](https://huggingface.co/Ethanliang99/MetaWAM-LIBERO-Predict2-2B) | [**Real-world checkpoint**](https://huggingface.co/Ethanliang99/MetaWAM-RealWorld-Predict2-2B)
+[![CoRL 2026](https://img.shields.io/badge/CoRL-2026-4B44CE?style=flat-square)](https://www.corl.org/)
+![arXiv](https://img.shields.io/badge/arXiv-coming_soon-B31B1B?style=flat-square&logo=arxiv&logoColor=white)
+[![RoboCasa model](https://img.shields.io/badge/%F0%9F%A4%97_Model-RoboCasa-FFD21E?style=flat-square)](https://huggingface.co/Ethanliang99/MetaWAM-RoboCasa-Predict2-2B)
+[![LIBERO model](https://img.shields.io/badge/%F0%9F%A4%97_Model-LIBERO-FFD21E?style=flat-square)](https://huggingface.co/Ethanliang99/MetaWAM-LIBERO-Predict2-2B)
+[![Real-world model](https://img.shields.io/badge/%F0%9F%A4%97_Model-Real--World-FFD21E?style=flat-square)](https://huggingface.co/Ethanliang99/MetaWAM-RealWorld-Predict2-2B)
+
+[![License](https://img.shields.io/badge/License-Apache_2.0-blue?style=flat-square)](LICENSE)
+[![Python](https://img.shields.io/badge/Python-3.10-3776AB?style=flat-square&logo=python&logoColor=white)](SETUP.md)
+[![PyTorch](https://img.shields.io/badge/PyTorch-2.7-EE4C2C?style=flat-square&logo=pytorch&logoColor=white)](https://pytorch.org/)
+[![Built on Cosmos Policy](https://img.shields.io/badge/Built_on-Cosmos_Policy-76B900?style=flat-square&logo=nvidia&logoColor=white)](https://github.com/NVlabs/cosmos-policy)
 
 </div>
 

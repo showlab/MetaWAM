@@ -173,9 +173,20 @@ bash scripts/convert_checkpoint.sh metawam_realworld__inference \
 
 ## 3. Deployment
 
+### Released checkpoint
+
+[Ethanliang99/MetaWAM-RealWorld-Predict2-2B](https://huggingface.co/Ethanliang99/MetaWAM-RealWorld-Predict2-2B) is a single policy trained jointly on the three tasks (Sweep, Place Cup, Build Block; 7.2K steps). It is tied to our camera placement and robot setup, so treat it as a reference or an initialization for fine-tuning on your own data rather than a drop-in policy:
+```bash
+hf download Ethanliang99/MetaWAM-RealWorld-Predict2-2B --local-dir checkpoints/MetaWAM-RealWorld-Predict2-2B
+export FRANKA_CKPT_PATH=checkpoints/MetaWAM-RealWorld-Predict2-2B/MetaWAM-RealWorld-Predict2-2B.pt
+export FRANKA_DATASET_STATS_PATH=checkpoints/MetaWAM-RealWorld-Predict2-2B/realworld_dataset_statistics.json
+export FRANKA_T5_EMBEDDINGS_PATH=checkpoints/MetaWAM-RealWorld-Predict2-2B/realworld_t5_embeddings.pkl
+```
+The task instructions it was trained with are "Sweep the green block into the dustpan", "Place the cup on the green coaster" and "Place the orange block on top of the gray block".
+
 ### Policy server (GPU machine)
 
-From the repository root:
+From the repository root, with your own trained checkpoint (or the variables above for the released one):
 ```bash
 export FRANKA_CKPT_PATH=checkpoints/metawam_realworld.pt
 export FRANKA_DATASET_STATS_PATH=$REALWORLD_DATASET_DIR/success_only/dataset_statistics.json

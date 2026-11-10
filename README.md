@@ -8,7 +8,7 @@
 
 **Accepted at CoRL 2026 🎉**
 
-[**Code**](https://github.com/showlab/MetaWAM) | [**RoboCasa checkpoint**](https://huggingface.co/Ethanliang99/MetaWAM-RoboCasa-Predict2-2B) | [**LIBERO checkpoint**](https://huggingface.co/Ethanliang99/MetaWAM-LIBERO-Predict2-2B)
+[**Code**](https://github.com/showlab/MetaWAM) | [**RoboCasa checkpoint**](https://huggingface.co/Ethanliang99/MetaWAM-RoboCasa-Predict2-2B) | [**LIBERO checkpoint**](https://huggingface.co/Ethanliang99/MetaWAM-LIBERO-Predict2-2B) | [**Real-world checkpoint**](https://huggingface.co/Ethanliang99/MetaWAM-RealWorld-Predict2-2B)
 
 </div>
 
@@ -75,13 +75,15 @@ The `Original` column is the standard LIBERO benchmark. All values are average s
 |---|---|---|
 | [MetaWAM-RoboCasa-Predict2-2B](https://huggingface.co/Ethanliang99/MetaWAM-RoboCasa-Predict2-2B) | `metawam_robocasa__inference` | `MetaWAM-RoboCasa-Predict2-2B.pt`, `robocasa_dataset_statistics.json`, `robocasa_t5_embeddings.pkl` |
 | [MetaWAM-LIBERO-Predict2-2B](https://huggingface.co/Ethanliang99/MetaWAM-LIBERO-Predict2-2B) | `metawam_libero__inference` | `MetaWAM-LIBERO-Predict2-2B.pt`, `libero_dataset_statistics.json`, `libero_t5_embeddings.pkl` |
+| [MetaWAM-RealWorld-Predict2-2B](https://huggingface.co/Ethanliang99/MetaWAM-RealWorld-Predict2-2B) | `metawam_realworld__inference` | `MetaWAM-RealWorld-Predict2-2B.pt`, `realworld_dataset_statistics.json`, `realworld_t5_embeddings.pkl` |
 
 ```bash
 hf download Ethanliang99/MetaWAM-RoboCasa-Predict2-2B --local-dir checkpoints/MetaWAM-RoboCasa-Predict2-2B
 hf download Ethanliang99/MetaWAM-LIBERO-Predict2-2B --local-dir checkpoints/MetaWAM-LIBERO-Predict2-2B
+hf download Ethanliang99/MetaWAM-RealWorld-Predict2-2B --local-dir checkpoints/MetaWAM-RealWorld-Predict2-2B
 ```
 
-The dataset statistics and T5 embedding files are identical to the ones released with Cosmos Policy.
+For RoboCasa and LIBERO, the dataset statistics and T5 embedding files are identical to the ones released with Cosmos Policy. The real-world checkpoint is a single policy trained jointly on the three Franka tasks; it is tied to our robot setup (see [REALWORLD.md](REALWORLD.md)).
 
 ## Getting Started
 

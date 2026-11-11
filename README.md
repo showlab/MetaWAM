@@ -129,11 +129,11 @@ Setting `use_single_meta_frame=False` falls back to the original Cosmos Policy f
 ## Citation
 
 ```bibtex
-@inproceedings{liang2026metawam,
-  title     = {From Video Frames to Robot Meta-Frames: A Unified Latent Interface for World Action Models},
-  author    = {Liang, Guoqiang and Lin, Yiqi and Chen, Yanzhe and Ma, Kevin Yuchen and Shou, Mike Zheng},
-  booktitle = {Conference on Robot Learning (CoRL)},
-  year      = {2026}
+@article{liang2026metawam,
+  title   = {From Video Frames to Robot Meta-Frames: A Unified Latent Interface for World Action Models},
+  author  = {Liang, Guoqiang and Lin, Yiqi and Chen, Yanzhe and Ma, Kevin Yuchen and Shou, Mike Zheng},
+  journal = {arXiv preprint arXiv:2611.14365},
+  year    = {2026}
 }
 ```
 

@@ -9,7 +9,7 @@
 **Accepted at CoRL 2026 🎉**
 
 [![CoRL 2026](https://img.shields.io/badge/CoRL-2026-4B44CE?style=flat-square)](https://www.corl.org/)
-![arXiv](https://img.shields.io/badge/arXiv-coming_soon-B31B1B?style=flat-square&logo=arxiv&logoColor=white)
+[![arXiv](https://img.shields.io/badge/arXiv-2611.14365-B31B1B?style=flat-square&logo=arxiv&logoColor=white)](https://arxiv.org/abs/2611.14365)
 [![RoboCasa model](https://img.shields.io/badge/%F0%9F%A4%97_Model-RoboCasa-FFD21E?style=flat-square)](https://huggingface.co/Ethanliang99/MetaWAM-RoboCasa-Predict2-2B)
 [![LIBERO model](https://img.shields.io/badge/%F0%9F%A4%97_Model-LIBERO-FFD21E?style=flat-square)](https://huggingface.co/Ethanliang99/MetaWAM-LIBERO-Predict2-2B)
 [![Real-world model](https://img.shields.io/badge/%F0%9F%A4%97_Model-Real--World-FFD21E?style=flat-square)](https://huggingface.co/Ethanliang99/MetaWAM-RealWorld-Predict2-2B)
@@ -33,7 +33,7 @@ On RoboCasa, this shortens the latent sequence from 11 to 8 frames and cuts infe
 
 ## 📰 News
 
-- **[2026.11]** Code and model checkpoints released.
+- **[2026.11]** 📄 Paper released on [arXiv](https://arxiv.org/abs/2611.14365); code and model checkpoints released.
 - **[2026.09]** 🎉 MetaWAM is accepted to CoRL 2026.
 
 ## Real-World Rollouts
@@ -121,7 +121,7 @@ Setting `use_single_meta_frame=False` falls back to the original Cosmos Policy f
 
 ## 📌 Roadmap & Status
 
-- [ ] Release the paper/preprint
+- [x] Release the paper/preprint
 - [x] Release the inference and evaluation code
 - [x] Release the model checkpoints
 - [x] Release the training code
